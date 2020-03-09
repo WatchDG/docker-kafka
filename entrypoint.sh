@@ -11,7 +11,7 @@ do
     value="${BASH_REMATCH[2]}"
     if grep -q "${key}" /kafka/config/server.properties; then
       sed -i -e "s!#\?${key}=.*!${key}=${value}!" /kafka/config/server.properties
-      else
+    else
         echo "${key}=${value}" >> /kafka/config/server.properties
     fi
   fi
