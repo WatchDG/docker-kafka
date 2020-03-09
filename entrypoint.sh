@@ -9,7 +9,11 @@ do
   if [[ "${var}" =~ ^KAFKA__([^=]+)=(.*)$ ]]; then
     key="${BASH_REMATCH[1]}"
     value="${BASH_REMATCH[2]}"
-    sed -i -e "s!#\?${key}=.*!${key}=${value}!" /kafka/config/server.properties
+    if grep -q "${key}" /kafka/config/server.properties; then
+      sed -i -e "s!#\?${key}=.*!${key}=${value}!" /kafka/config/server.properties
+      else
+        echo "${key}=${value}" >> /kafka/config/server.properties
+    fi
   fi
 done
 
