@@ -1,7 +1,9 @@
 # docker-kafka
-docker kafka
 
-## example:
+![Docker Pulls](https://img.shields.io/docker/pulls/watchdg/kafka?style=for-the-badge)
+![Docker Image Version (latest by date)](https://img.shields.io/docker/v/watchdg/kafka?style=for-the-badge)
+
+## example docker-compose.yml
 ```yml
 version: "3.6"
 services:
