@@ -2,7 +2,7 @@
 docker kafka
 
 ## example:
-```
+```yml
 version: "3.6"
 services:
   zookeeper:
